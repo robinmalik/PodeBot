@@ -39,6 +39,7 @@ if($Null -eq (Get-Process -Name ngrok -ErrorAction SilentlyContinue))
 		$Manifest = (Get-Content "bot\manifest.json" | ConvertFrom-Json)
 		$Manifest.validDomains = ($Ngrok.http -split 'http://')[1]
 		$Manifest | ConvertTo-Json -Depth 10 | Out-File -FilePath "bot\manifest.json" -Force
+		Write-Warning -Message "Your bot endpoint must be configured to: $($Ngrok.https)/api/messages"
 	}
 	catch
 	{
