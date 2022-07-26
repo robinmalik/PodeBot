@@ -1,0 +1,69 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.13/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.13",
+  "version": "1.0.0",
+  "id": "CLIENTID",
+  "packageName": "com.domain.mybot",
+  "developer": {
+    "name": "Company Name",
+    "websiteUrl": "https://www.domain.com",
+    "privacyUrl": "https://www.domain.com/privacy",
+    "termsOfUseUrl": "https://www.domain.com/termsofuse"
+  },
+  "icons": {
+    "color": "resources/color.png",
+    "outline": "resources/outline.png"
+  },
+  "name": {
+    "short": "Bot Short Name",
+    "full": "Bot Full Name."
+  },
+  "description": {
+    "short": "A short description.",
+    "full": "A full description."
+  },
+  "accentColor": "#FFFFFF",
+  "bots": [
+    {
+      "botId": "CLIENTID",
+      "scopes": [
+        "personal",
+        "team",
+        "groupchat"
+      ],
+      "supportsFiles": false,
+      "isNotificationOnly": false,
+      "commandLists": [
+        {
+          "scopes": [
+            "personal",
+            "team",
+            "groupchat"
+          ],
+          "commands": [
+            {
+              "title": "pt",
+              "description": "Get a plain text response from the bot."
+            },
+            {
+              "title": "ptwu",
+              "description": "Get a plain text response from the bot and have it update the response."
+            },
+            {
+              "title": "ac",
+              "description": "Get an Adaptive Card response from the bot."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "composeExtensions": [],
+  "configurableTabs": [],
+  "staticTabs": [],
+  "permissions": [
+    "identity",
+    "messageTeamMembers"
+  ],
+  "validDomains": "subdomain.ngrok.io"
+}
