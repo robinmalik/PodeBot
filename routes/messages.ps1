@@ -20,7 +20,7 @@ Add-PodeRoute -Method Post -Path '/api/messages' -ContentType 'application/json'
 		}
 
 		# When messages are sent from within a channel they're prepended with '<at>BotName</at> '. Strip.
-		$Text = (($Data.text -replace "<at>.*</a> ", '') -replace "\n", '').Trim()
+		$Text = (($Data.text -replace "<at>.*</at> ", '') -replace "\n", '').Trim()
 		Write-PodeHost -Object "Parsed text: $Text"
 
 		# Handle the example conditions. The logic of this could be adapted, obviously.
