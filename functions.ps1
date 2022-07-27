@@ -12,7 +12,14 @@ function Start-NGrok
 	try
 	{
 		if(!$Path) { $Path = 'ngrok' }
-		Start-Process $Path -ArgumentList "http http://localhost:$Port" -WindowStyle Minimized -ErrorAction Stop
+		if($PSEdition -eq 'Desktop' -or ($PSEdition -eq 'Core' -and $PSVersionTable.OS -match "Windows"))
+		{
+			Start-Process $Path -ArgumentList "http http://localhost:$Port" -WindowStyle Minimized -ErrorAction Stop
+		}
+		else
+		{
+			Start-Process $Path -ArgumentList "http http://localhost:$Port" -ErrorAction Stop
+		}
 	}
 	catch
 	{
