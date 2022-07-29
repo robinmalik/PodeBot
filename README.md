@@ -1,11 +1,12 @@
 ﻿## PodeBot PoC
 
-A very quick PoC of a PowerShell bot running on [Pode](https://github.com/badgerati/Pode) that works with Microsoft Teams.
+A very quick PoC of a PowerShell bot running on [Pode](https://github.com/badgerati/Pode) that works with Microsoft Teams. Designed to show how the two work together, rather than being a fully fledged framework to develop with.
 
 ![demo](images/demo.gif)
 
 * **Note:** It does not implement authentication for Pode server access, nor does it provide any scaffolding framework for dealing with user roles, privileges and permissions to determine who can run what command within Teams. PoshBot has some useful ideas around this.
-* **Note:** This is currently untested on anything other than Windows 11 22H2.
+* **Note:** The approach taken is very simple (with all message handling in `messages.ps1`). You'll end up with giant if/elseif blocks if you want to do lots of things.
+* **Note:** This is only tested on: Windows 11 22H2 and Debian 10.11 under WSL2.
 
 ### Running the Pode Server (bot):
 
